@@ -96,6 +96,9 @@ public class Control1Controller {
     	
     	return "control1/form";
     }
-    
+ 
+    private void mostrar() {
+    	
+    }
     
 }
