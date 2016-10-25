@@ -27,6 +27,10 @@ public class Carta {
     @NotNull
     private String fondo;
 
+    private String cod6() {
+    	return "";
+    }
+    
     /**
      */
     private Long valor2;
