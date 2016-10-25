@@ -100,4 +100,9 @@ public class Control1Controller {
     private void mostrar() {
     	
     }
+    
+    private void cod1() {
+    	
+    }
+    
 }
