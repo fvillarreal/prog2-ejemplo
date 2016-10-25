@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ar_edu_um_programacion2_demo1_domain_User" object="${user}" path="/users" z="B3Ub0RpUWpNYXNAxhMXOaQOnJI4=">
+        <field:display field="firstName" id="s_ar_edu_um_programacion2_demo1_domain_User_firstName" object="${user}" z="UKM4WOyA2bgK8kV6dYvTtgjF8AU="/>
+        <field:display field="lastName" id="s_ar_edu_um_programacion2_demo1_domain_User_lastName" object="${user}" z="V1sT1a1hPSQLHaimiEow0fbRhJ8="/>
+        <field:display field="emailAddress" id="s_ar_edu_um_programacion2_demo1_domain_User_emailAddress" object="${user}" z="GU6Y7pcAPmtaAjDNcfhSdPfkCYs="/>
+        <field:display field="password" id="s_ar_edu_um_programacion2_demo1_domain_User_password" object="${user}" z="+uFoo6lH0NBMJXNYk75wbfNVfNA="/>
+        <field:display date="true" dateTimePattern="${user_activationdate_date_format}" field="activationDate" id="s_ar_edu_um_programacion2_demo1_domain_User_activationDate" object="${user}" z="5nSn8xr6/QLzZT6onOnl58eHoZY="/>
+        <field:display field="activationKey" id="s_ar_edu_um_programacion2_demo1_domain_User_activationKey" object="${user}" z="dfaVo3FRebb1URGyiv9EJPkgHC4="/>
+        <field:display field="enabled" id="s_ar_edu_um_programacion2_demo1_domain_User_enabled" object="${user}" z="9Ypp0+VBqW55FHKrvWGkoiFYmQ4="/>
+        <field:display field="locked" id="s_ar_edu_um_programacion2_demo1_domain_User_locked" object="${user}" z="EAD7+qZBIo9v3IIHdpod9pEShU0="/>
+    </page:show>
+</div>

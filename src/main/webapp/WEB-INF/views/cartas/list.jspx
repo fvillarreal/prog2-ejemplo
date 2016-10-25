@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ar_edu_um_programacion2_demo1_entidades_Carta" items="${cartas}" z="c3mCEK+xt89mcEH+xhq2We73c3I=">
+        <table:table data="${cartas}" id="l_ar_edu_um_programacion2_demo1_entidades_Carta" path="/cartas" z="hkLi5r4vAFbotcy8JXj8cUQYpfM=">
+            <table:column id="c_ar_edu_um_programacion2_demo1_entidades_Carta_palo" property="palo" z="IOfvsttlxCYq3wk4wUFmXxJHhB8="/>
+            <table:column id="c_ar_edu_um_programacion2_demo1_entidades_Carta_numero" property="numero" z="/PWv+SBcWacbqsTIlyWFpxl5dYY="/>
+            <table:column id="c_ar_edu_um_programacion2_demo1_entidades_Carta_fondo" property="fondo" z="X1ZC3pmn0GUwcheUAamDw5s8wIE="/>
+            <table:column id="c_ar_edu_um_programacion2_demo1_entidades_Carta_valor2" property="valor2" z="FtkUfg32lD4gea90yh5ARWdkxxE="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,59 @@
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2016-09-27 19:33:56
+project --topLevelPackage ar.edu.um.programacion2.demo1 --projectName demo1 --java 7 --packaging WAR
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2016-09-27 19:34:05
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2016-09-27 19:34:07
+help
+hint
+jpa setup --database MYSQL --provider HIBERNATE --databaseName demo1 --hostName localhost --userName fernando --password fernando
+hint
+entity jpa --class ar.edu.um.programacion2.demo1.entidades.Carta --testAutomatically 
+field string --fieldName palo --class ~.entidades.Carta --notNull 
+web mvc setup
+web mvc all --package ~.web
+help
+web mvc jquery setup
+web mvc bootstrap setup
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2016-09-30 07:24:22
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2016-10-04 18:38:23
+controller class --class ~.web.Control1Controller --preferredMapping /control1
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2016-10-06 07:53:50
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2016-10-18 18:29:31
+finder list --class ~.entidades.Carta --depth 1
+finder list --class ~.entidades.Carta --depth 2
+finder list --class ~.entidades.Carta --depth 1 --filter Palo,Numero
+finder list --class ~.entidades.Carta --depth 2 --filter Palo,Numero
+finder list --class ~.entidades.Carta --depth 1 --filter Palo,Numero
+finder add --finderName findCartasByPaloLike --class ~.entidades.Carta
+finder list --class ~.entidades.Carta --depth 1 --filter Palo,Numero
+finder add --finderName findCartasByNumeroIsNull --class ~.entidades.Carta
+json add --class ~.entidades.Carta
+web mvc json all 
+security setup
+entity jpa --class ~.domain.User --testAutomatically --permitReservedWords
+field string --fieldName firstName --sizeMin 1 --notNull
+field string --fieldName lastName --sizeMin 1 --notNull
+field string --fieldName emailAddress --sizeMin 1 --notNull --unique
+field string --fieldName password --sizeMin 1 --notNull
+field date --fieldName activationDate --type java.util.Date 
+field string --fieldName activationKey 
+field boolean --fieldName enabled 
+field boolean --fieldName locked 
+entity jpa --class ~.domain.Role --testAutomatically --permitReservedWords
+field string --fieldName roleName --sizeMin 1 --notNull --unique
+field string --fieldName roleDescription --sizeMin --sizeMax 200 --notNull
+entity jpa --class ~.domain.UserRole --testAutomatically
+field reference --fieldName userEntry --type ~.domain.User --notNull
+field reference --fieldName roleEntry --type ~.domain.Role --notNull
+finder add findUsersByEmailAddress --class ~.domain.User
+finder add findUsersByActivationKeyAndEmailAddress --class ~.domain.User
+finder add findUserRolesByUserEntry --class ~.domain.UserRole
+web mvc scaffold --class ~.web.UserController --backingType ~.domain.User
+web mvc scaffold --class ~.web.RoleController --backingType ~.domain.Role
+web mvc scaffold --class ~.web.UserRoleController --backingType ~.domain.UserRole
+email sender setup --hostServer smtp.gmail.com --port 587 --protocol SMTP --username rohitsghatoltest@gmail.com --password password4me
+email template setup --from rohitsghatoltest@gmail.com --subject "Password Recovery"
+typicalsecurity setup
+web mvc install language --code es
+web mvc finder all 
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2016-10-19 12:31:45
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2016-10-25 18:26:54

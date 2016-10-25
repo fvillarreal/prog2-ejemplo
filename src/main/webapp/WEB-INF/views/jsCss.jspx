@@ -1,0 +1,12 @@
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <!-- Comentario para ver si aparece -->
+    <meta content="" />
+    <c:forEach var="scripts" items="${JSs}">
+    	<spring:url value="/resources/scripts/${scripts}" var="js_url"/>
+		<script src="${js_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+	</c:forEach>
+    <c:forEach var="css" items="${CSSs}">
+		<spring:url value="/resources/styles/${css}" var="js_url"/>
+		<link type="text/css" href="${js_url}" rel="stylesheet"/>
+	</c:forEach>
+</jsp:root>
