@@ -18,6 +18,7 @@ import org.springframework.roo.addon.web.mvc.controller.finder.RooWebFinder;
 @RooWebFinder
 public class UserController {
 
+	
     @Autowired
     private MessageDigestPasswordEncoder messageDigestPasswordEncoder;
 
