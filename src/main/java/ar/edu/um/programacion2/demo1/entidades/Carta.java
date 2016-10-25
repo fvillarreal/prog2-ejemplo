@@ -30,4 +30,8 @@ public class Carta {
     /**
      */
     private Long valor2;
+    
+    private void cod2() {
+    	
+    }
 }
