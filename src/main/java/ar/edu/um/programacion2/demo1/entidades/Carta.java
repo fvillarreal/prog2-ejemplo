@@ -12,7 +12,6 @@ import javax.validation.constraints.NotNull;
 @RooJpaActiveRecord(finders = { "findCartasByPaloLike", "findCartasByNumeroIsNull" })
 @RooJson
 public class Carta {
-
     /**
      */
     @NotNull
@@ -23,8 +22,12 @@ public class Carta {
     @NotNull
     private String numero;
 
+    /**
+     */
     @NotNull
     private String fondo;
 
+    /**
+     */
     private Long valor2;
 }
