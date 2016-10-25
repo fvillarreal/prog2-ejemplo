@@ -35,7 +35,7 @@ public class Carta {
      */
     private Long valor2;
     
-    private String cod2() {
-    	return "";
+    private void cod2() {
+    	
     }
 }
