@@ -14,6 +14,7 @@ import javax.persistence.ManyToOne;
 @RooJson
 public class Carta {
 
+	
     /**
      */
     @NotNull
