@@ -4,6 +4,7 @@
 package ar.edu.um.programacion2.demo1.entidades;
 
 import ar.edu.um.programacion2.demo1.entidades.Carta;
+import ar.edu.um.programacion2.demo1.entidades.Mazo;
 
 privileged aspect Carta_Roo_JavaBean {
     
@@ -37,6 +38,14 @@ privileged aspect Carta_Roo_JavaBean {
     
     public void Carta.setValor2(Long valor2) {
         this.valor2 = valor2;
+    }
+    
+    public Mazo Carta.getMazo() {
+        return this.mazo;
+    }
+    
+    public void Carta.setMazo(Mazo mazo) {
+        this.mazo = mazo;
     }
     
 }

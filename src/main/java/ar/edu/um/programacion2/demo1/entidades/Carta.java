@@ -6,12 +6,14 @@ import org.springframework.roo.addon.tostring.RooToString;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.validation.constraints.NotNull;
+import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(finders = { "findCartasByPaloLike", "findCartasByNumeroIsNull" })
 @RooJson
 public class Carta {
+
     /**
      */
     @NotNull
@@ -28,14 +30,18 @@ public class Carta {
     private String fondo;
 
     private String cod6() {
-    	return "";
+        return "";
     }
-    
+
     /**
      */
     private Long valor2;
-    
+
     private void cod2() {
-    	
     }
+
+    /**
+     */
+    @ManyToOne
+    private Mazo mazo;
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ar_edu_um_programacion2_demo1_entidades_Mazo" modelAttribute="mazo" path="/mazoes" versionField="Version" z="e3rCw/2E9QG4iqcLXmhXoXPVWQ8=">
+        <field:input field="nombre" id="c_ar_edu_um_programacion2_demo1_entidades_Mazo_nombre" required="true" z="gyfPNKEzaPiqP49nC63YR1UnxSE="/>
+        <field:simple field="cartas" id="c_ar_edu_um_programacion2_demo1_entidades_Mazo_cartas" messageCode="entity_reference_not_managed" messageCodeAttribute="Carta" z="f1FAAEp1Zcj/gkmDRAmYCwnqTB4="/>
+    </form:update>
+</div>

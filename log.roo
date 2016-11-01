@@ -57,3 +57,10 @@ web mvc install language --code es
 web mvc finder all 
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2016-10-19 12:31:45
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2016-10-25 18:26:54
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2016-10-25 20:09:26
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2016-11-01 18:38:54
+entity jpa --class ~.entidades.Mazo --testAutomatically
+field string --fieldName nombre --notNull 
+field set --type ~.entidades.Carta --fieldName cartas --cardinality ONE_TO_MANY --class ~.entidades.Mazo --mappedBy mazo
+web mvc all --package ~.web
+field reference --class ~.entidades.Carta --fieldName mazo --type ~.entidades.Mazo --cardinality MANY_TO_ONE 

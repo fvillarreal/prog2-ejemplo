@@ -7,5 +7,6 @@
         <field:display field="numero" id="s_ar_edu_um_programacion2_demo1_entidades_Carta_numero" object="${carta}" z="UzD4/Ce0cETuWgWyUnCc2DiHgBQ="/>
         <field:display field="fondo" id="s_ar_edu_um_programacion2_demo1_entidades_Carta_fondo" object="${carta}" z="gpafO5+Au7Vgbo9bQS59hfEDO8g="/>
         <field:display field="valor2" id="s_ar_edu_um_programacion2_demo1_entidades_Carta_valor2" object="${carta}" z="7yyvDBvUWBxxN3Du2YrvUkJ8HKE="/>
+        <field:display field="mazo" id="s_ar_edu_um_programacion2_demo1_entidades_Carta_mazo" object="${carta}" z="m+NRZpsmzBBgW5+etasvwSuUuto="/>
     </page:show>
 </div>

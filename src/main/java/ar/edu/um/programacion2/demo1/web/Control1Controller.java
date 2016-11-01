@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import ar.edu.um.programacion2.demo1.entidades.Carta;
+import ar.edu.um.programacion2.demo1.entidades.Mazo;
 import ar.edu.um.programacion2.demo1.service.Venta;
 import ar.edu.um.programacion2.demo1.service.VentaService;
 
@@ -37,6 +38,14 @@ public class Control1Controller {
     public String index() {
         return "control1/index";
     }
+    
+    @RequestMapping(value="/mazo/{mazoId}",method = RequestMethod.GET)
+    public String mazos(@PathVariable Long mazoId) {
+        Mazo mazo = Mazo.findMazo(mazoId);
+        Carta carta1 = Carta.findCarta(7L);
+    	return "control1/index";
+    }
+    
     
     @RequestMapping(value="/pepe",method = RequestMethod.GET)
     public String pepeHonguito(Model uiModel) {

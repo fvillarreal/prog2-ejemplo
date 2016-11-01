@@ -5,7 +5,7 @@ package ar.edu.um.programacion2.demo1.web;
 
 import ar.edu.um.programacion2.demo1.entidades.Carta;
 import ar.edu.um.programacion2.demo1.entidades.Mazo;
-import ar.edu.um.programacion2.demo1.web.CartaController;
+import ar.edu.um.programacion2.demo1.web.MazoController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -18,79 +18,79 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
-privileged aspect CartaController_Roo_Controller {
+privileged aspect MazoController_Roo_Controller {
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String CartaController.create(@Valid Carta carta, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public String MazoController.create(@Valid Mazo mazo, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, carta);
-            return "cartas/create";
+            populateEditForm(uiModel, mazo);
+            return "mazoes/create";
         }
         uiModel.asMap().clear();
-        carta.persist();
-        return "redirect:/cartas/" + encodeUrlPathSegment(carta.getId().toString(), httpServletRequest);
+        mazo.persist();
+        return "redirect:/mazoes/" + encodeUrlPathSegment(mazo.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", produces = "text/html")
-    public String CartaController.createForm(Model uiModel) {
-        populateEditForm(uiModel, new Carta());
-        return "cartas/create";
+    public String MazoController.createForm(Model uiModel) {
+        populateEditForm(uiModel, new Mazo());
+        return "mazoes/create";
     }
     
     @RequestMapping(value = "/{id}", produces = "text/html")
-    public String CartaController.show(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("carta", Carta.findCarta(id));
+    public String MazoController.show(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("mazo", Mazo.findMazo(id));
         uiModel.addAttribute("itemId", id);
-        return "cartas/show";
+        return "mazoes/show";
     }
     
     @RequestMapping(produces = "text/html")
-    public String CartaController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public String MazoController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("cartas", Carta.findCartaEntries(firstResult, sizeNo));
-            float nrOfPages = (float) Carta.countCartas() / sizeNo;
+            uiModel.addAttribute("mazoes", Mazo.findMazoEntries(firstResult, sizeNo));
+            float nrOfPages = (float) Mazo.countMazoes() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("cartas", Carta.findAllCartas());
+            uiModel.addAttribute("mazoes", Mazo.findAllMazoes());
         }
-        return "cartas/list";
+        return "mazoes/list";
     }
     
     @RequestMapping(method = RequestMethod.PUT, produces = "text/html")
-    public String CartaController.update(@Valid Carta carta, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public String MazoController.update(@Valid Mazo mazo, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, carta);
-            return "cartas/update";
+            populateEditForm(uiModel, mazo);
+            return "mazoes/update";
         }
         uiModel.asMap().clear();
-        carta.merge();
-        return "redirect:/cartas/" + encodeUrlPathSegment(carta.getId().toString(), httpServletRequest);
+        mazo.merge();
+        return "redirect:/mazoes/" + encodeUrlPathSegment(mazo.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
-    public String CartaController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        populateEditForm(uiModel, Carta.findCarta(id));
-        return "cartas/update";
+    public String MazoController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        populateEditForm(uiModel, Mazo.findMazo(id));
+        return "mazoes/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
-    public String CartaController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Carta carta = Carta.findCarta(id);
-        carta.remove();
+    public String MazoController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Mazo mazo = Mazo.findMazo(id);
+        mazo.remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/cartas";
+        return "redirect:/mazoes";
     }
     
-    void CartaController.populateEditForm(Model uiModel, Carta carta) {
-        uiModel.addAttribute("carta", carta);
-        uiModel.addAttribute("mazoes", Mazo.findAllMazoes());
+    void MazoController.populateEditForm(Model uiModel, Mazo mazo) {
+        uiModel.addAttribute("mazo", mazo);
+        uiModel.addAttribute("cartas", Carta.findAllCartas());
     }
     
-    String CartaController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
+    String MazoController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
         String enc = httpServletRequest.getCharacterEncoding();
         if (enc == null) {
             enc = WebUtils.DEFAULT_CHARACTER_ENCODING;

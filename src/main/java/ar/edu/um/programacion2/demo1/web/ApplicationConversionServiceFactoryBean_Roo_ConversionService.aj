@@ -7,6 +7,7 @@ import ar.edu.um.programacion2.demo1.domain.Role;
 import ar.edu.um.programacion2.demo1.domain.User;
 import ar.edu.um.programacion2.demo1.domain.UserRole;
 import ar.edu.um.programacion2.demo1.entidades.Carta;
+import ar.edu.um.programacion2.demo1.entidades.Mazo;
 import ar.edu.um.programacion2.demo1.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -112,6 +113,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<Mazo, String> ApplicationConversionServiceFactoryBean.getMazoToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ar.edu.um.programacion2.demo1.entidades.Mazo, java.lang.String>() {
+            public String convert(Mazo mazo) {
+                return new StringBuilder().append(mazo.getNombre()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Mazo> ApplicationConversionServiceFactoryBean.getIdToMazoConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, ar.edu.um.programacion2.demo1.entidades.Mazo>() {
+            public ar.edu.um.programacion2.demo1.entidades.Mazo convert(java.lang.Long id) {
+                return Mazo.findMazo(id);
+            }
+        };
+    }
+    
+    public Converter<String, Mazo> ApplicationConversionServiceFactoryBean.getStringToMazoConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ar.edu.um.programacion2.demo1.entidades.Mazo>() {
+            public ar.edu.um.programacion2.demo1.entidades.Mazo convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Mazo.class);
+            }
+        };
+    }
+    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getRoleToStringConverter());
         registry.addConverter(getIdToRoleConverter());
@@ -125,6 +150,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getCartaToStringConverter());
         registry.addConverter(getIdToCartaConverter());
         registry.addConverter(getStringToCartaConverter());
+        registry.addConverter(getMazoToStringConverter());
+        registry.addConverter(getIdToMazoConverter());
+        registry.addConverter(getStringToMazoConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

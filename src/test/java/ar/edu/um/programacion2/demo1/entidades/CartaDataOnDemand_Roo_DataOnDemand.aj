@@ -5,6 +5,7 @@ package ar.edu.um.programacion2.demo1.entidades;
 
 import ar.edu.um.programacion2.demo1.entidades.Carta;
 import ar.edu.um.programacion2.demo1.entidades.CartaDataOnDemand;
+import ar.edu.um.programacion2.demo1.entidades.MazoDataOnDemand;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 privileged aspect CartaDataOnDemand_Roo_DataOnDemand {
@@ -21,6 +23,9 @@ privileged aspect CartaDataOnDemand_Roo_DataOnDemand {
     private Random CartaDataOnDemand.rnd = new SecureRandom();
     
     private List<Carta> CartaDataOnDemand.data;
+    
+    @Autowired
+    MazoDataOnDemand CartaDataOnDemand.mazoDataOnDemand;
     
     public Carta CartaDataOnDemand.getNewTransientCarta(int index) {
         Carta obj = new Carta();

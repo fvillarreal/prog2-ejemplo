@@ -8,6 +8,7 @@
             <table:column id="c_ar_edu_um_programacion2_demo1_entidades_Carta_numero" property="numero" z="/PWv+SBcWacbqsTIlyWFpxl5dYY="/>
             <table:column id="c_ar_edu_um_programacion2_demo1_entidades_Carta_fondo" property="fondo" z="X1ZC3pmn0GUwcheUAamDw5s8wIE="/>
             <table:column id="c_ar_edu_um_programacion2_demo1_entidades_Carta_valor2" property="valor2" z="FtkUfg32lD4gea90yh5ARWdkxxE="/>
+            <table:column id="c_ar_edu_um_programacion2_demo1_entidades_Carta_mazo" property="mazo" z="by9t7durV9pG2UQyhgm3/+Vj0TY="/>
         </table:table>
     </page:list>
 </div>

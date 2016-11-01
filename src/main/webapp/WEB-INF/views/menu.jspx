@@ -27,5 +27,9 @@
             <menu:item id="i_userrole_list" messageCode="global_menu_list" url="/userroles?page=1&amp;size=${empty param.size ? 10 : param.size}" z="fTjcT4INZTypLgu+ZHmwzE55ORs="/>
             <menu:item id="fi_userrole_userentry" messageCode="global_menu_find" url="/userroles?find=ByUserEntry&amp;form" z="JLowrgxSZ/Geluin/9qGXem92Ng="/>
         </menu:category>
+        <menu:category id="c_mazo" z="c2GemkaaqnSZ18N6q3E74NKZbis=">
+            <menu:item id="i_mazo_new" messageCode="global_menu_new" url="/mazoes?form" z="mbVCaTLUrgeSEOps2d252o5j8mE="/>
+            <menu:item id="i_mazo_list" messageCode="global_menu_list" url="/mazoes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="VmgSKz5HzG1RDtU2C+YMHpPiyos="/>
+        </menu:category>
     </menu:menu>
 </div>

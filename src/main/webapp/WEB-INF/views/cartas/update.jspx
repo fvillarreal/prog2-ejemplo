@@ -7,5 +7,6 @@
         <field:input field="numero" id="c_ar_edu_um_programacion2_demo1_entidades_Carta_numero" required="true" z="YdHMwPVtoUjCkjxTZwyBNHaTOC8="/>
         <field:input field="fondo" id="c_ar_edu_um_programacion2_demo1_entidades_Carta_fondo" required="true" z="UU9izGakGEBF4AIteIcIlve35/s="/>
         <field:input field="valor2" id="c_ar_edu_um_programacion2_demo1_entidades_Carta_valor2" validationMessageCode="field_invalid_integer" z="8I4t+vPGixWxh9M7sdWif5Ddv/g="/>
+        <field:select field="mazo" id="c_ar_edu_um_programacion2_demo1_entidades_Carta_mazo" itemValue="id" items="${mazoes}" path="/mazoes" z="W9ZQlRRLJbUbmvE0B0XMERB2jHc="/>
     </form:update>
 </div>
